@@ -5,10 +5,10 @@ from get_duration import get_audio_duration
 from speeed import change_audio_speed
 from final import mute_video_and_add_audio
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import streamlit as st
 import tempfile
-load_dotenv()
+# load_dotenv()
 
 
 st.title("Video Grammar Improver")
