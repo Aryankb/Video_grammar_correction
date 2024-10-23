@@ -5,3 +5,4 @@ gtts
 SpeechRecognition
 streamlit
 regex
+google-generativeai
