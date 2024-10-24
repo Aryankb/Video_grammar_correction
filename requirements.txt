@@ -6,3 +6,4 @@ SpeechRecognition
 streamlit
 regex
 google-generativeai
+python-dotenv
