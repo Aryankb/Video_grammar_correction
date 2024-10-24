@@ -5,10 +5,10 @@ from get_duration import get_audio_duration
 from speeed import change_audio_speed
 from final import mute_video_and_add_audio
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import streamlit as st
 import tempfile
-# load_dotenv()
+load_dotenv()
 
 
 st.title("Video Grammar Improver")
@@ -69,7 +69,7 @@ if uploaded_file is not None:
         API_KEY = os.getenv("API_KEY")
         genai.configure(api_key=API_KEY)
         model = genai.GenerativeModel(model_name="gemini-1.5-flash")
-        response = model.generate_content([ str(texts),"You are a english trainer. Please resolve gramatical errors for each element of the list. correct each element by understanding the overall context of what the person wants to say. don't do anything for empty strings and return the empty string as it is. If you feel any sentence is incomplete, complete it by adding few words. strictly don't keep multiple options for words in parenthesis, instead add most relevant word. dont add so many words else it would be difficult to sync. The total number of items in the list should remain same. return the corrected python list. Only return the list "])
+        response = model.generate_content([ str(texts),"You are a english trainer. Please resolve gramatical errors for each element of the list. correct each element by understanding the overall context of what the person wants to say. don't do anything for empty strings and return the empty string as it is. If you feel any sentence is incomplete, complete it by adding few words. 'strictly don't keep multiple options for words or new words in parenthesis', instead add most relevant word. dont add so many words else it would be difficult to sync. The total number of items in the list should remain same. return the corrected python list. Only return the list "])
         # Get the response data from Gemini
         gemini_response = response.text
         pt=gemini_response[9:-4]
